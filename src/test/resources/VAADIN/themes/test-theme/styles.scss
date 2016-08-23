@@ -1,0 +1,31 @@
+@import "../valo/valo.scss";
+
+.test-theme {
+  @include valo;
+	
+  
+  $nav-collapsed-width: 40px;
+  $nav-expanded-width: 200px;
+  
+  .root-layout {
+  	.nav {
+  	  width: $nav-collapsed-width;
+  	  transition: width 1s;
+  	  background-color: green;
+  	}
+    .grid-wrapper {
+      width: calc(100% - $nav-collapsed-width);
+    }
+    &.nav-expanded {
+	  	.nav {
+	  	  width: $nav-expanded-width;
+	  	}
+	    .grid-wrapper {
+	      width: calc(100% - $nav-expanded-width);
+	    }
+    }
+  }
+  .red-bg-color {
+    background-color: red;
+  }
+}
